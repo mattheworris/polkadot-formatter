@@ -1,0 +1,19 @@
+{
+  "name": "polkadot-formatter",
+  "version": "1.0.0",
+  "description": "A content script to format token amount inputs on Polkadot.js UI with underscores for readability.",
+  "main": "src/contentScript.js",
+  "scripts": {
+    "build": "echo 'Build script not defined'",
+    "test": "echo 'Test script not defined'"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": [
+    "polkadot",
+    "formatter",
+    "content-script"
+  ],
+  "author": "Your Name",
+  "license": "Apache-2.0"
+}

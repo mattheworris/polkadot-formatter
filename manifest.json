@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Polkadot.js Token Input Formatter",
+    "version": "1.0",
+    "description": "Formats Polkadot.js token value input fields by adding underscores between groups of three zeros for readability.",
+    "content_scripts": [
+      {
+        "matches": ["https://polkadot.js.org/*"],
+        "js": ["contentScript.js"],
+        "css": []
+      }
+    ]
+  }
