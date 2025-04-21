@@ -16,7 +16,7 @@ The Polkadot Formatter is a browser extension that enhances the user experience 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/polkadot-formatter.git
+   git clone https://github.com/mattheworris/polkadot-formatter.git
    ```
 
 2. Navigate to the project directory:
@@ -25,11 +25,21 @@ The Polkadot Formatter is a browser extension that enhances the user experience 
    cd polkadot-formatter
    ```
 
-3. Install the dependencies:
+## Manual Installation (Browser Extension)
 
-   ```bash
-   npm install
-   ```
+1. Open your browser and navigate to the extensions page:
+   - **Chrome**: Go to `chrome://extensions/`
+   - **Firefox**: Go to `about:addons` [Untested]
+
+2. Enable "Developer mode" (Chrome) or "Debug Add-ons" (Firefox).
+
+3. Click "Load unpacked" (Chrome) or "Load Temporary Add-on" (Firefox).
+
+4. Select the project directory (the folder containing your `manifest.json` and `contentScript.js`).
+
+5. The extension should now be loaded and active.
+
+6. Navigate to the Polkadot.js UI to see it in action.
 
 ## Usage
 
