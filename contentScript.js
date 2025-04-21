@@ -35,22 +35,22 @@
         overlay.style.fontWeight = inputStyle.fontWeight;
         overlay.style.lineHeight = inputStyle.lineHeight;
         overlay.style.letterSpacing = inputStyle.letterSpacing;
-        overlay.style.color = inputStyle.color;
         overlay.style.padding = inputStyle.padding;
-        overlay.style.paddingLeft = window.getComputedStyle(input).paddingLeft;
-        overlay.style.paddingRight = window.getComputedStyle(input).paddingRight;
-        overlay.style.boxSizing = 'border-box'; // Ensure padding is included in width/height calculations
         overlay.style.margin = inputStyle.margin;
         overlay.style.height = inputStyle.height;
         overlay.style.width = inputStyle.width;
         overlay.style.top = inputStyle.offsetTop + 'px';
         overlay.style.left = inputStyle.offsetLeft + 'px';
-        overlay.style.left = inputStyle.paddingLeft;
-        overlay.style.backgroundColor = inputStyle.backgroundColor;
         overlay.style.height = inputStyle.offsetHeight + 'px';
         overlay.style.width = inputStyle.offsetWidth + 'px';
+        overlay.style.left = inputStyle.paddingLeft;
         overlay.style.display = 'flex';
         overlay.style.alignItems = 'center';        // Center vertically
+        overlay.style.paddingLeft = window.getComputedStyle(input).paddingLeft;
+        overlay.style.paddingRight = window.getComputedStyle(input).paddingRight;
+        overlay.style.boxSizing = 'border-box'; // Ensure padding is included in width/height calculations
+        overlay.style.backgroundColor = 'transparent'; // Make background transparent
+        overlay.style.color = 'rgba(0, 0, 0, 0.7)'; // Make text color transparent
 
         // Ensure the input’s container is positioned (for correct absolute positioning of overlay)
         let container = input.parentElement;
