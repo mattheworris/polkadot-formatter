@@ -21,7 +21,7 @@
         if (formattedInputs.has(input)) {
             return; // Already set up
         }
-        // Create an overlay span to display the formatted value
+        // Create an overlay span to display the formatted value and digit count
         const overlay = document.createElement('span');
         overlay.style.position = 'absolute';
         overlay.style.pointerEvents = 'none';       // Let clicks pass through to the actual input
@@ -52,6 +52,17 @@
         overlay.style.backgroundColor = 'transparent'; // Make background transparent
         overlay.style.color = 'rgba(0, 0, 0, 0.7)'; // Make text color transparent
 
+        // Create a span for the formatted value
+        const formattedSpan = document.createElement('span');
+        // Create a span for the digit count
+        const countSpan = document.createElement('span');
+        countSpan.style.marginLeft = '8px';
+        countSpan.style.color = '#1976d2'; // blue for visibility
+        countSpan.style.fontWeight = 'bold';
+
+        overlay.appendChild(formattedSpan);
+        overlay.appendChild(countSpan);
+
         // Ensure the input’s container is positioned (for correct absolute positioning of overlay)
         let container = input.parentElement;
         if (container) {
@@ -68,15 +79,17 @@
         input.style.color = 'transparent';
         input.style.caretColor = inputStyle.color;
 
-        // Update the overlay text to the formatted value
+        // Update the overlay text to the formatted value and digit count
         function updateOverlay() {
             const rawValue = input.value;
             // If empty or not numeric, show nothing
             if (!rawValue || !/^\d+$/.test(rawValue)) {
-                overlay.textContent = rawValue;
+                formattedSpan.textContent = rawValue;
+                countSpan.textContent = '';
             } else {
                 console.log('Updating overlay. Raw value:', rawValue, 'Formatted:', formatWithUnderscores(rawValue));
-                overlay.textContent = formatWithUnderscores(rawValue);
+                formattedSpan.textContent = formatWithUnderscores(rawValue);
+                countSpan.textContent = ` [${rawValue.length}]`;
             }
         }
 
