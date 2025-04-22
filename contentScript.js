@@ -82,14 +82,22 @@
         // Update the overlay text to the formatted value and digit count
         function updateOverlay() {
             const rawValue = input.value;
-            // If empty or not numeric, show nothing
-            if (!rawValue || !/^\d+$/.test(rawValue)) {
+            if (!rawValue) {
+                // Hide overlay and restore input text color
+                overlay.style.display = 'none';
+                input.style.color = inputStyle.color;
+                countSpan.textContent = '';
+                formattedSpan.textContent = '';
+            } else if (!/^\d+$/.test(rawValue)) {
+                overlay.style.display = 'flex';
                 formattedSpan.textContent = rawValue;
                 countSpan.textContent = '';
+                input.style.color = 'transparent';
             } else {
-                console.log('Updating overlay. Raw value:', rawValue, 'Formatted:', formatWithUnderscores(rawValue));
+                overlay.style.display = 'flex';
                 formattedSpan.textContent = formatWithUnderscores(rawValue);
                 countSpan.textContent = ` [${rawValue.length}]`;
+                input.style.color = 'transparent';
             }
         }
 
